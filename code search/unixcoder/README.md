@@ -27,5 +27,5 @@ python   run_multilin_adapter.py     --output_dir saved_models     --model_name_
 4. Other baselines for check
 ```
 ./run_adapter.py  # Fine-tuning the monolingual model with adapter
-./run_multilin.py     # Fine-tuning the multilingual model with the full model
+./run_multilin.py  # Fine-tuning the multilingual model with the full model
 ```
