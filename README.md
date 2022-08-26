@@ -6,7 +6,7 @@ This repository contains code for paper "An Adapter for All Programming Language
 # How to use
 We apply adapter tuning to code pre-trained models UniXcoder and CodeT5 for fine-tuning. 
   
-  Please refer to the subdirectory of tasks for more details ([code summarization](https://github.com/wangdeze18/Multilingual-Adapter-for-SE/tree/main/code%20summarization), and [code search](https://github.com/wangdeze18/Multilingual-Adapter-for-SE/tree/main/code%20search/unixcoder)) !
+  Please refer to the subdirectory of tasks for more details ([code summarization](https://github.com/wangdeze18/Multilingual-Adapter-for-SE/tree/main/code%20summarization) and [code search](https://github.com/wangdeze18/Multilingual-Adapter-for-SE/tree/main/code%20search/unixcoder)) !
 
  
 
