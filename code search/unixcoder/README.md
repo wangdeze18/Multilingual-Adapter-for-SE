@@ -1,6 +1,6 @@
 # Code Search
 
-1. Datasets
+1. Download the dataset
 
 
 ```
