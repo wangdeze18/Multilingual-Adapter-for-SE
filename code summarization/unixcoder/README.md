@@ -44,5 +44,4 @@ python  run_multilin_adapter.py --do_test --model_name_or_path microsoft/unixcod
 4. Other baselines for check
 ```
 ./run_adapter.py  # Fine-tuning the monolingual model with adapter
-./run_multilin.py  # Fine-tuning the multilingual model with the full model
 ```
