@@ -33,12 +33,12 @@ cd ..
 
    You can also skip this step by downloading the [pre-trained model]() directly.
 ```
-python  run_multilin_adapter.py     --output_dir saved_models     --model_name_or_path microsoft/unixcoder-base      --do_train     --train_data_dir dataset/CSN  --test_data_dir dataset/CSN    --eval_data_dir dataset/CSN     --codebase_file dataset/CSN     --num_train_epochs 10     --code_length 256     --nl_length 128     --train_batch_size 64     --eval_batch_size 64     --learning_rate 5e-5     --seed 123456  2>&1| tee saved_models/multilin_adapter_train.log
+python  run_multilin_adapter.py --do_train --do_eval --model_name_or_path microsoft/unixcoder-base --train_dir dataset --dev_dir dataset --output_dir saved_models/$lang --max_source_length 256 --max_target_length 128 --beam_size 10 --train_batch_size 48 --eval_batch_size 48 --learning_rate 5e-5 --gradient_accumulation_steps 2 --num_train_epochs 10  2>&1| tee saved_models/multilin_adapter_train.log
 ```
 
 3. Evaluation
 ```
-python   run_multilin_adapter.py     --output_dir saved_models     --model_name_or_path microsoft/unixcoder-base      --do_test     --train_data_dir dataset/CSN     --test_data_dir dataset/CSN     --codebase_file dataset/CSN     --num_train_epochs 10     --code_length 256     --nl_length 128     --train_batch_size 64     --eval_batch_size 64     --learning_rate 1e-4     --seed 123456  2>&1| tee saved_models/multilin_adapter_test.log
+python  run_multilin_adapter.py --do_test --model_name_or_path microsoft/unixcoder-base --test_dir dataset --output_dir saved_models/$lang --max_source_length 256 --max_target_length 128 --beam_size 10 --train_batch_size 48 --eval_batch_size 48 --learning_rate 5e-5 --gradient_accumulation_steps 2 --num_train_epochs 10  2>&1| tee saved_models/multilin_adapter_test.log
 ```
 
 4. Other baselines for check
