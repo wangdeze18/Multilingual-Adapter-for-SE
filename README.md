@@ -15,5 +15,3 @@ We apply adapter tuning to code pre-trained models UniXcoder and CodeT5 for fine
 
 # Acknowledgement
 Our implementation is adapted from [CodeXGLUE](https://github.com/microsoft/CodeXGLUE), [UniXcoder](https://github.com/microsoft/CodeBERT/tree/master/UniXcoder), and [CodeT5](https://github.com/salesforce/CodeT5) for the implementation of pre-trained models.
-
-```
