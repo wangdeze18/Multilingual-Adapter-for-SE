@@ -34,7 +34,7 @@ cd ..
    Pre-trained models can be downloaded from [here]() .
 ```
 cd sh 
-sh ./run_multilin_adapter.sh
+python run_exp.py --model_tag codet5_base --task summarize  --apply_adapter
 ```
 4. Other baselines for check
 ```
