@@ -228,8 +228,8 @@ def train(args, model, tokenizer):
         
         result = 0.0
         for lang in language:
-
-            results = evaluate(args, model, tokenizer,args.eval_data_dir,lang, eval_when_training=True)
+            eval_data_file = os.path.join(args.eval_data_dir, lang, 'valid.jsonl')
+            results = evaluate(args, model, tokenizer,eval_data_file,lang, eval_when_training=True)
             result += results['eval_mrr'] ##todo
         results = {
         "eval_mrr":float(result/len(language))
@@ -260,9 +260,9 @@ def train(args, model, tokenizer):
             logger.info("Saving model checkpoint to %s", output_dir1)
 
 
-def evaluate(args, model, tokenizer,eval_dir, lang, eval_when_training=False):
+def evaluate(args, model, tokenizer,eval_data_file, lang, eval_when_training=False):
     #if lang:
-    eval_data_file = os.path.join(args.eval_data_dir, lang, 'test.jsonl')
+    
     codebase_name = os.path.join(args.eval_data_dir, lang, 'codebase.jsonl')
     query_dataset = TextDataset(tokenizer, args, eval_data_file,lang=lang,istest=True)
     query_sampler = SequentialSampler(query_dataset)
@@ -454,7 +454,8 @@ def main():
             model_to_load.load_state_dict(torch.load(output_dir))      
         model.to(args.device)
         for lang in language:
-            result = evaluate(args, model, tokenizer,args.eval_data_dir,lang)
+            eval_data_file = os.path.join(args.eval_data_dir, lang, 'valid.jsonl')
+            result = evaluate(args, model, tokenizer,eval_data_file,lang)
             logger.info("***** Eval results *****")
             for key in sorted(result.keys()):
                 logger.info("  %s = %s", key, str(round(result[key],3)))
@@ -467,7 +468,8 @@ def main():
             model_to_load.load_state_dict(torch.load(output_dir))      
         model.to(args.device)
         for lang in language:
-            result = evaluate(args, model, tokenizer,args.test_data_dir,lang)
+            eval_data_file = os.path.join(args.eval_data_dir, lang, 'test.jsonl')
+            result = evaluate(args, model, tokenizer,eval_data_file,lang)
             logger.info("***** Eval results *****")
             for key in sorted(result.keys()):
                 logger.info("  %s = %s", key, str(round(result[key],3)))
