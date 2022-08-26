@@ -25,7 +25,7 @@ def load_and_cache_gen_all_data(args, filename, pool, tokenizer, split_tag, only
     for file in filename:
 
         example = read_examples(file, args.data_num, args.task)
-        example = random.sample(example, 100)
+        #example = random.sample(example, 100)
         examples.extend(example)
     #for i in range(len(language)):
     #    fn = filename[i]
