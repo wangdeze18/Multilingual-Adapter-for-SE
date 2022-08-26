@@ -1,4 +1,0 @@
-python -m torch.distributed.launch --nproc_per_node 4 run_multilin_adapter.py --do_train --do_eval --model_name_or_path microsoft/unixcoder-base --train_dir dataset --dev_dir dataset --output_dir saved_models/$lang --max_source_length 256 --max_target_length 128 --beam_size 10 --train_batch_size 48 --eval_batch_size 48 --learning_rate 5e-5 --gradient_accumulation_steps 2 --num_train_epochs 10 2>&1| tee saved_models/aa.log
-
-python -m torch.distributed.launch --nproc_per_node 4 run_multilin_adapter.py --do_test --model_name_or_path microsoft/unixcoder-base --test_dir dataset --output_dir saved_models/$lang --max_source_length 256 --max_target_length 128 --beam_size 10 --train_batch_size 48 --eval_batch_size 48 --learning_rate 5e-5 --gradient_accumulation_steps 2 --num_train_epochs 10  2>&1| tee saved_models/multi_whole_model_test.log
-
