@@ -31,7 +31,7 @@ cd ..
 
 2. Fine-tuning the multlingual adapter and evaluation
 
-   Pre-trained models can be downloaded from [here]() .
+   Pre-trained models can be downloaded from [here](https://drive.google.com/file/d/1AKkT5uZjwyPduzbMHy0o0MZc7gRhSugp/view?usp=sharing) .
 ```
 cd sh 
 python run_exp.py --model_tag codet5_base --task summarize --sub_task none  --apply_adapter
