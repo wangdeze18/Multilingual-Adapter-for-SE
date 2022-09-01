@@ -11,7 +11,7 @@ We apply adapter tuning to code pre-trained models UniXcoder and CodeT5 for fine
  
 
 # Datasets and Models 
-**We also provide [pre-trained models](https://zenodo.org/record/5414294#.YTIb64gzY2w) fine-tuned by our approach to verify the results.**
+**We also provide pre-trained models fine-tuned by our approach to verify the results.**
 
 # Acknowledgement
 Our implementation is adapted from [CodeXGLUE](https://github.com/microsoft/CodeXGLUE), [UniXcoder](https://github.com/microsoft/CodeBERT/tree/master/UniXcoder), and [CodeT5](https://github.com/salesforce/CodeT5) for the implementation of pre-trained models.
