@@ -221,34 +221,7 @@ if __name__ == '__main__':
         "BERT_finetune_adapter": "bert-base-uncased",
         "BERT_finetune_init_adapter": "bert-base-uncased",
     }
-    '''
-    model_max_seq_lengths = {
-        "BERT": 512,
-        "BERT_adapter": 512,
-        "CodeBERT": 512,
-        "CodeBERT_adapter": 512,
-        "CodeBERTa": 512,
-        "CodeBERTa_adapter": 512,
-        "GraphCodeBERT": 512,
-        "GraphCodeBERT_adapter": 512,
-        "CodeT5": 512,
-        "CodeT5_adapter": 512,
-        "CodeT5_multilin_adapter": 512,
-        "CodeT5_multlin": 512,
-        "JavaBERT-mini": 512,
-        "JavaBERT-mini_adapter": 512,
-        "PLBART": 1024,
-        "PLBART_adapter": 1024,
-        "PLBART-mtjava": 1024,
-        "PLBART-mtjava_adapter": 1024,
-        "PLBART-large": 1024,
-        "PLBART-large_adapter": 1024,
-        "t5": 512,
-        "BERT_finetune": 512,
-        "BERT_finetune_adapter": 512,
-        "BERT_finetune_init_adapter": 512,
-    }
-    '''
+    
     for task_code in task_codes:
         for shuffle_kind in shuffle_kinds:
             for model_checkpoint in list(model_checkpoints.keys()):
@@ -318,10 +291,6 @@ if __name__ == '__main__':
                         path = './saved_models/bert/bert_model.bin'
                         pretrained_dict = torch.load(path, map_location=torch.device('cpu'))
                         model_dict = model.state_dict()
-                        # for k,v in model_dict.items():
-                        #    print(k)
-                        # for k,v in pretrained_dict.items():
-                        #    print(k)
 
                         for k, v in model_dict.items():
                             pretrained_k = 'encoder.' + k
