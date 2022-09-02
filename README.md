@@ -1,6 +1,6 @@
 # Multilingual-Adapter-for-SE
 
-This repository contains code for paper "An Adapter for All Programming Languages? Adapter Tuning for Multilingual Tasks in Software Engineering". 
+This repository contains code for paper "One Adapter for All Programming Languages? Adapter Tuning for Multilingual Tasks in Software Engineering". 
 
 
 # How to use
