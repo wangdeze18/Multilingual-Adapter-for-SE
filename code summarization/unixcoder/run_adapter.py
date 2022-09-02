@@ -252,7 +252,7 @@ def main():
         weight_decay_params = []
         no_decay_params = []
         for n, p in model.named_parameters():
-            if 'adapter' in n or 'Norm' in n :
+            if 'adapter' in n:
                 if not any(nd in n for nd in no_decay):
                     weight_decay_params.append(p)
                 if any(nd in n for nd in no_decay):
