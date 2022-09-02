@@ -309,7 +309,7 @@ def main():
         weight_decay_params = []
         no_decay_params = []
         for n,p in model.named_parameters():
-            if 'adapter' in n or 'Norm' in n:
+            if 'adapter' in n :#or 'Norm' in n
                 if not any(nd in n for nd in no_decay):
                     weight_decay_params.append(p)
                 if any(nd in n for nd in no_decay):
@@ -320,14 +320,7 @@ def main():
              'weight_decay': args.weight_decay},
             {'params':no_decay_params, 'weight_decay': 0.0}
         ]
-        '''
-        no_decay = ['bias', 'LayerNorm.weight']
-        optimizer_grouped_parameters = [
-            {'params': [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
-             'weight_decay': args.weight_decay},
-            {'params': [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], 'weight_decay': 0.0}
-        ]
-        '''
+
         optimizer = AdamW(optimizer_grouped_parameters, lr=args.learning_rate, eps=args.adam_epsilon)
         scheduler = get_linear_schedule_with_warmup(optimizer,
                                                     num_warmup_steps=int(
