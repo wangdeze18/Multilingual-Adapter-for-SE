@@ -1,0 +1,2 @@
+python probe_unixcoder_codesearch_extractor.py
+python probe_codesearch_classifier.py >AST.txt
