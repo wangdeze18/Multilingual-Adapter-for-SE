@@ -178,30 +178,23 @@ def save_features(model, tokenizer, device):
 
 if __name__ == '__main__':
 
-    task_codes = ['AST', 'LEN','TYP']  # ['AST', 'CPX', 'CSC', 'IDF', 'IDT', 'JBL', 'JFT', 'JMB', 'LEN', 'MXN', 'NML', 'NMS', 'NPT', 'OCT', 'OCU', 'REA', 'SCK', 'SRI', 'SRK', 'TAN', 'TYP', 'VCT', 'VCU']
+    task_codes = ['CPX', 'LEN','TYP']  # ['AST', 'CPX', 'CSC', 'IDF', 'IDT', 'JBL', 'JFT', 'JMB', 'LEN', 'MXN', 'NML', 'NMS', 'NPT', 'OCT', 'OCU', 'REA', 'SCK', 'SRI', 'SRK', 'TAN', 'TYP', 'VCT', 'VCU']
     shuffle_kinds = ['ORIG']
     label_counts = ['10k']  # , '10k'
 
     model_checkpoints = {
 
-        "CodeT5_multilin": "Salesforce/codet5-base",
-        "CodeT5_multilin_adapter": "Salesforce/codet5-base",
-        "codet5_java": "Salesforce/codet5-base",
-        "codet5_ruby": "Salesforce/codet5-base",
-        "codet5_python": "Salesforce/codet5-base",
-        "codet5_php": "Salesforce/codet5-base",
-        "codet5_go": "Salesforce/codet5-base",
-        "codet5_javascript": "Salesforce/codet5-base",
+        "BERT": "bert-base-uncased",
+        "BERT_adapter": "BERT_adapter",
+        "CodeBERT": "microsoft/codebert-base",
+        "CodeBERT_adapter": "microsoft/codebert-base",
+        "CodeBERTa": "huggingface/CodeBERTa-small-v1",
+        "CodeBERTa_adapter": "huggingface/CodeBERTa-small-v1",
+        "GraphCodeBERT": "microsoft/graphcodebert-base",
+        "GraphCodeBERT_adapter": "microsoft/graphcodebert-base",
 
     }
-    ''' not run!!!!!
-        "codet5_adapter_java": "Salesforce/codet5-base",
-        "codet5_adapter_ruby": "Salesforce/codet5-base",
-        "codet5_adapter_python": "Salesforce/codet5-base",
-        "codet5_adapter_php": "Salesforce/codet5-base",
-        "codet5_adapter_go": "Salesforce/codet5-base",
-        "codet5_adapter_javascript": "Salesforce/codet5-base",
-        '''
+
     model_checkpoints_full = {
         "BERT": "bert-base-uncased",
         "BERT_adapter": "BERT_adapter",
