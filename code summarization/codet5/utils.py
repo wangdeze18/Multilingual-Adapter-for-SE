@@ -83,8 +83,8 @@ def load_and_cache_gen_dev_data(args, filename, pool, tokenizer, split_tag, only
     #    example = read_summarize_examples_each(fn, args.data_num, subtask)
         #read_examples()
 
-    #if is_sample:
-    #    examples = random.sample(examples, min(5000, len(examples)))
+    if is_sample:
+        examples = random.sample(examples, min(5000, len(examples)))
     if split_tag == 'train':
         calc_stats(examples, tokenizer, is_tokenize=True)
     else:
@@ -119,12 +119,6 @@ def load_and_cache_gen_data(args, filename, pool, tokenizer, split_tag, only_src
 
     examples = read_examples(filename, args.data_num, args.task)
 
-    #if is_sample:
-    #    examples = random.sample(examples, min(5000, len(examples)))
-    if split_tag == 'train':
-        examples = random.sample(examples, min(1200, len(examples)))
-    elif split_tag =='dev':
-        examples = random.sample(examples, min(300, len(examples)))
     if split_tag == 'train':
         calc_stats(examples, tokenizer, is_tokenize=True)
     else:
