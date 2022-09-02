@@ -182,33 +182,12 @@ if __name__ == '__main__':
 
     model_checkpoints = {
 
-        # "unixcoder_java": "microsoft/unixcoder-base",
-        # "unixcoder_adapter_java": "microsoft/unixcoder-base",
-        # "unixcoder_ruby": "microsoft/unixcoder-base",
-        # "unixcoder_php": "microsoft/unixcoder-base",
-        # "unixcoder_python": "microsoft/unixcoder-base",
-        # "unixcoder_go": "microsoft/unixcoder-base",
-        # "unixcoder_javascript": "microsoft/unixcoder-base",
-
-        #    "unixcoder_adapter_ruby": "microsoft/unixcoder-base",
-        #    "unixcoder_adapter_php": "microsoft/unixcoder-base",
-        #    "unixcoder_adapter_python": "microsoft/unixcoder-base",
-        #    "unixcoder_adapter_go": "microsoft/unixcoder-base",
-        #    "unixcoder_adapter_javascript": "microsoft/unixcoder-base",
 
         "unixcoder_multilin": "microsoft/unixcoder-base",
         "unixcoder_multilin_adapter": "microsoft/unixcoder-base",
 
     }
-    '''
 
-            "unixcoder_adapter_java": "microsoft/unixcoder-base",
-            "unixcoder_adapter_ruby": "microsoft/unixcoder-base",
-            "unixcoder_adapter_php": "microsoft/unixcoder-base",
-            "unixcoder_adapter_python": "microsoft/unixcoder-base",
-            "unixcoder_adapter_go": "microsoft/unixcoder-base",
-            "unixcoder_adapter_javascript": "microsoft/unixcoder-base",
-            '''
     model_checkpoints_full = {
         "BERT": "bert-base-uncased",
         "BERT_adapter": "BERT_adapter",
@@ -240,36 +219,6 @@ if __name__ == '__main__':
         "unixcoder_adapter_language": "microsoft/unixcoder-base",
     }
 
-    '''
-    model_max_seq_lengths = {
-        "BERT": 512,
-        "BERT_adapter": 512,
-        "CodeBERT": 512,
-        "CodeBERT_adapter": 512,
-        "CodeBERTa": 512,
-        "CodeBERTa_adapter": 512,
-        "GraphCodeBERT": 512,
-        "GraphCodeBERT_adapter": 512,
-        "CodeT5": 512,
-        "CodeT5_adapter": 512,
-        "JavaBERT-mini": 512,
-        "JavaBERT-mini_adapter": 512,
-        "PLBART": 1024,
-        "PLBART_adapter": 1024,
-        "PLBART-mtjava": 1024,
-        "PLBART-mtjava_adapter": 1024,
-        "PLBART-large": 1024,
-        "PLBART-large_adapter": 1024,
-        "t5": 512,
-        "CodeBERT_finetuned":512,
-        "CodeBERT_finetuned_adapter": 512,
-        "CodeBERT_finetuned_init_adapter": 512,
-        "GraphCodeBERT_finetuned": 512,
-        "GraphCodeBERT_finetuned_adapter": 512,
-        "GraphCodeBERT_finetuned_init_adapter": 512,
-        "unixcoder":512,
-    }
-    '''
     for task_code in task_codes:
         for shuffle_kind in shuffle_kinds:
             for model_checkpoint in list(model_checkpoints.keys()):
