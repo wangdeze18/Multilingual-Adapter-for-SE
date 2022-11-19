@@ -25,7 +25,17 @@ The data statistics of original CodeSearchNet is shown in the table below. The d
 | Ruby                 |  57,393  | 164,048  | 
 
   
+The dataset we use are futher cleaned by [CodeXGLUE](https://github.com/microsoft/CodeXGLUE).
 
+  
+| Programming Language | Training |  Dev   |  Test  |
+| :------------------- | :------: | :----: | :----: |
+| Python               | 251,820  | 13,914 | 14,918 |
+| PHP                  | 241,241  | 12,982 | 14,014 |
+| Go                   | 167,288  | 7,325  | 8,122  |
+| Java                 | 164,923  | 5,183  | 10,955 |
+| JavaScript           |  58,025  | 3,885  | 3,291  |
+| Ruby                 |  24,927  | 1,400  | 1,261  |
 
 
 **We also provide pre-trained models fine-tuned by our approach to verify the results.**
