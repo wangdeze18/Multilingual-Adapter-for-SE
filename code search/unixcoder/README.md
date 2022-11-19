@@ -1,3 +1,18 @@
+# Low-resource experiment on code search
+
+
+
+| Training samples    |     Ruby | JavaScript | Java | Go | PHP | Python | Overall |
+| :-: |  :-: |  :-: |  :-: |  :-: |  :-: |  :-: |  :-: |
+| 6*100   |      0.9295   |     0.9122 |  0.8912 |  0.8763 |  0.8599 | 0.8494 | 0|
+| 6*200     |      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
+| 6*500     |      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
+| 6*1,000     |      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
+| 908,224     |      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
+
+
+
+
 # Code Search
 
 1. Download the dataset
@@ -28,3 +43,5 @@ python   run_multilin_adapter.py     --output_dir saved_models     --model_name_
 ```
 ./run_adapter.py  # Fine-tuning the monolingual model with adapter
 ```
+
+
