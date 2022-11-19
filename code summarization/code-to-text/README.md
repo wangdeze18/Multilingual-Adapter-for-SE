@@ -9,7 +9,7 @@
 | *m*GraphCodeBERT|      14.95   |     15.79 |  19.91 |  18.92 |  26.15 | 18.90 | 19.10|
 | *m*Adapter-GraphCodeBERT(ours)     |      **15.09**  |15.40 |     19.55 |  **19.05** |  26.05 |  **19.98** | **19.19**|
  
-
+We denote multilingual fine-tuned models with the prefix *m*, as *m*CodeBERT is a multilingual model fine-tuned based on CodeBERT, and *m*Adapter refers to models tuned with our multilingual adapter.
 
 # Multilingual adapter tuning for CodeBERT and GraphCodeBERT
 1. Download the dataset
