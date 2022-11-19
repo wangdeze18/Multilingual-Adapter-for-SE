@@ -12,7 +12,7 @@ We apply adapter tuning to code pre-trained models UniXcoder and CodeT5 for fine
 
 # Datasets and Models 
 
-The data statistics of original CodeSearchNet is shown in the table below.
+The data statistics of original CodeSearchNet is shown in the table below. The dataset contains about 2 million pairs of function-documentation pairs and about another 4 million functions without an associated documentation.
 | Programming Language | w/ documentation |  All  |
 | :------------------- | :------: | :----: |
 | Python               | 503,502  | 1,156,085 | 
