@@ -24,7 +24,7 @@ The data statistics of original CodeSearchNet is shown in the table below. The d
 
 
 
-The dataset we use are futher filtered by [CodeXGLUE](https://github.com/microsoft/CodeXGLUE).
+The dataset we use are futher cleaned by [CodeXGLUE](https://github.com/microsoft/CodeXGLUE).
 | Programming Language | Training |  Dev   |  Test  |
 | :------------------- | :------: | :----: | :----: |
 | Python               | 251,820  | 13,914 | 14,918 |
