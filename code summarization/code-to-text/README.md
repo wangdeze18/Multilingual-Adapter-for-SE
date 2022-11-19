@@ -1,8 +1,17 @@
-# Multilingual adapter tuning for CodeBERT and GraphCodeBERT
+# Results
+
+| Model    |     Ruby | JavaScript | Java | Go | PHP | Python | Overall (BLEU-4) |
+| :-: |  :-: |  :-: |  :-: |  :-: |  :-: |  :-: |  :-: |
+| CodeBERT   |      0.9295   |     0.9122 |  0.8912 |  0.8763 |  0.8599 | 0.8494 | 0|
+| *m*CodeBERT|      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
+| *m*Adapter-CodeBERT     |      62.4   |     49.1 |  52.6 |   |  44.6 | 50.5 | 0|
+| GraphCodeBERT   |      0.9295   |     0.9122 |  0.8912 |  0.8763 |  0.8599 | 0.8494 | 0|
+| *m*GraphCodeBERT|      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
+| *m*Adapter-GraphCodeBERT     |      62.4   |     49.1 |  52.6 |   |  44.6 | 50.5 | 0|
  
 
 
-
+# Multilingual adapter tuning for CodeBERT and GraphCodeBERT
 1. Download the dataset
 
 ```
