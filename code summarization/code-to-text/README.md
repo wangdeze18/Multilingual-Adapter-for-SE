@@ -48,6 +48,5 @@ cd ..
 sh ./run_multilingual_adapter.sh
 ```
 
- GraphCodeBERT: Follow the exact instructions followed for CodeBERT, just replace the "microsoft/codebert-base" with "microsoft/graphcodebert-base". 
- You can download the [pre-trained model](https://drive.google.com/file/d/1jKwfWiCO6izkcOtHabmUWRsI_YGSo_C2/view?usp=sharing) directly for check.
+GraphCodeBERT: Follow the exact instructions followed for CodeBERT, just replace the "microsoft/codebert-base" with "microsoft/graphcodebert-base". 
  
