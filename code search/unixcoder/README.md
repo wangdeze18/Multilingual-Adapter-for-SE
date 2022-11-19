@@ -1,14 +1,14 @@
 # Low-resource experiment on code search
 
-
+We randomly sample the datasets in each programming languages, and choose 100, 200, 500 and 1000 samples for each language. Then, we insert the adapter into UniXcoder and evaluate the model on the combinations of these data. We vary the random seed, repeat the experiment several times, and average the results.
 
 | Training samples    |     Ruby | JavaScript | Java | Go | PHP | Python | Overall |
 | :-: |  :-: |  :-: |  :-: |  :-: |  :-: |  :-: |  :-: |
 | 6*100   |      0.9295   |     0.9122 |  0.8912 |  0.8763 |  0.8599 | 0.8494 | 0|
 | 6*200     |      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
-| 6*500     |      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
-| 6*1,000     |      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
-| 908,224     |      0.9094   |     0.8888 |  0.8638 |  0.8461 |  0.8267 | 0.8142 | 0|
+| 6*500     |      62.4   |     49.1 |  52.6 |   |  44.6 | 50.5 | 0|
+| 6*1,000     |      64.8   |     52.1 |  55.8 |  72.2 | 47.7  | 54.0 | 57.8 |
+| 908,224     |      77.3  |     70.2 |  73.5 |  90.9 |  67.1 | 72.7 | 75.3 |
 
 
 
