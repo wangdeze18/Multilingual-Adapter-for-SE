@@ -10,7 +10,7 @@ We randomly sample the datasets in each programming languages, and choose 100, 2
 | 6*1,000     |      64.8   |     52.1 |  55.8 |  72.2 | 47.7  | 54.0 | 57.8 |
 | 908,224     |      77.3  |     70.2 |  73.5 |  90.9 |  67.1 | 72.7 | 75.3 |
 
-
+The results on code search are obviously not as promising as code summarization, and more data are needed to get an acceptable performance.
 
 
 # Code Search
