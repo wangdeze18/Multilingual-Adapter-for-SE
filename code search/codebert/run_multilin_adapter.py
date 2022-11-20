@@ -198,7 +198,7 @@ class TextDataset(Dataset):
                     
                     # add or not 
                     code_tokens = []
-                    lang_str =  '<' + lang_i + '>' 
+                    lang_str =  '<' + str(lang) + '>' 
                     code_tokens.append(lang_str)
                     code_tokens.extend(js['code_tokens'])
                     js['code_tokens'] = code_tokens
@@ -338,7 +338,7 @@ def train(args, model, tokenizer):
         for lang in language:
             eval_data_file = os.path.join(args.eval_data_file, lang, 'valid.jsonl')
             codebase_name = os.path.join(args.eval_data_file, lang, 'codebase.jsonl')
-            result = evaluate(args, model, tokenizer,eval_data_file,codebase_name, eval_when_training=True)
+            result = evaluate(args, model, tokenizer,eval_data_file,lang,codebase_name, eval_when_training=True)
             results += result['eval_mrr']
         results = {
         "eval_mrr":float(results/len(language))
@@ -366,12 +366,12 @@ def train(args, model, tokenizer):
             logger.info("Saving model checkpoint to %s", output_dir)
 
 
-def evaluate(args, model, tokenizer,file_name,codebase, eval_when_training=False):
+def evaluate(args, model, tokenizer,file_name,lang,codebase, eval_when_training=False):
     query_dataset = TextDataset(tokenizer, args, file_name,is_test=True)
     query_sampler = SequentialSampler(query_dataset)
     query_dataloader = DataLoader(query_dataset, sampler=query_sampler, batch_size=args.eval_batch_size,num_workers=4)
     
-    code_dataset = TextDataset(tokenizer, args, codebase,is_test=True)
+    code_dataset = TextDataset(tokenizer, args, codebase,is_test=True,lang=lang)
     code_sampler = SequentialSampler(code_dataset)
     code_dataloader = DataLoader(code_dataset, sampler=code_sampler, batch_size=args.eval_batch_size,num_workers=4)    
 
@@ -547,15 +547,7 @@ def main():
 
     # Evaluation
     results = {}
-    if args.do_eval:
-        checkpoint_prefix = 'checkpoint-best-mrr/multilin_adapter_model.bin'
-        output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
-        model.load_state_dict(torch.load(output_dir),strict=False)      
-        model.to(args.device)
-        result=evaluate(args, model, tokenizer,args.eval_data_file)
-        logger.info("***** Eval results *****")
-        for key in sorted(result.keys()):
-            logger.info("  %s = %s", key, str(round(result[key],4)))
+    
             
     if args.do_test:
         checkpoint_prefix = 'checkpoint-best-mrr/multilin_adapter_model.bin'
@@ -565,7 +557,7 @@ def main():
         for lang in language:
             eval_data_file = os.path.join(args.eval_data_file, lang, 'test.jsonl')
             codebase_name = os.path.join(args.eval_data_file, lang, 'codebase.jsonl')
-            result = evaluate(args, model, tokenizer,eval_data_file,codebase_name, eval_when_training=True)
+            result = evaluate(args, model, tokenizer,eval_data_file,lang,codebase_name, eval_when_training=True)
 
             #result=evaluate(args, model, tokenizer,args.test_data_file)
             logger.info("***** Eval results *****")
